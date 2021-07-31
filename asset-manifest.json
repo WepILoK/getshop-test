@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/getshop-test/static/css/main.21767016.chunk.css",
+    "main.js": "/getshop-test/static/js/main.a309726c.chunk.js",
+    "main.js.map": "/getshop-test/static/js/main.a309726c.chunk.js.map",
+    "runtime-main.js": "/getshop-test/static/js/runtime-main.ede01e12.js",
+    "runtime-main.js.map": "/getshop-test/static/js/runtime-main.ede01e12.js.map",
+    "static/js/2.87d3c304.chunk.js": "/getshop-test/static/js/2.87d3c304.chunk.js",
+    "static/js/2.87d3c304.chunk.js.map": "/getshop-test/static/js/2.87d3c304.chunk.js.map",
+    "index.html": "/getshop-test/index.html",
+    "static/css/main.21767016.chunk.css.map": "/getshop-test/static/css/main.21767016.chunk.css.map",
+    "static/js/2.87d3c304.chunk.js.LICENSE.txt": "/getshop-test/static/js/2.87d3c304.chunk.js.LICENSE.txt",
+    "static/media/background.0412b51f.png": "/getshop-test/static/media/background.0412b51f.png",
+    "static/media/check.a4df113f.svg": "/getshop-test/static/media/check.a4df113f.svg",
+    "static/media/fonVideo.60bb3d33.mp4": "/getshop-test/static/media/fonVideo.60bb3d33.mp4",
+    "static/media/qr-code.416b9a2c.svg": "/getshop-test/static/media/qr-code.416b9a2c.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ede01e12.js",
+    "static/js/2.87d3c304.chunk.js",
+    "static/css/main.21767016.chunk.css",
+    "static/js/main.a309726c.chunk.js"
+  ]
+}
