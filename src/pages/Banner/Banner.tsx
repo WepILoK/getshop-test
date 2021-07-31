@@ -1,10 +1,13 @@
 import React, {useEffect, useState} from 'react';
-import './Banner.scss'
+
 import qrCodeImg from '../../assets/images/qr-code.svg'
+
+import './Banner.scss'
 
 interface IBannerProps {
     changePage: () => void
 }
+
 
 export const Banner: React.FC<IBannerProps> = ({changePage}) => {
     const [visible, setVisible] = useState(false)
@@ -43,6 +46,5 @@ export const Banner: React.FC<IBannerProps> = ({changePage}) => {
             </div>
         );
     } else return null
-
 };
 

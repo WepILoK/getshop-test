@@ -1,4 +1,4 @@
-@import "src/App";
+@import "../../../../App";
 
 .keyboard {
   display: flex;
@@ -30,11 +30,6 @@
 
     &__num {
       width: 88px;
-    }
-
-    .active {
-      background-color: $mainColor2;
-      color: #ffffff;
     }
 
     &__backspace {
@@ -76,6 +71,14 @@
     }
   }
 
+  .error {
+    color: $errorColor;
+
+    p {
+      margin: 10.6px 0;
+    }
+  }
+
   &__btn {
     width: 284px;
     height: 52px;
@@ -86,16 +89,5 @@
     color: $disabled;
   }
 
-  .enabled {
-    background-color: $mainColor2;
-    color: #ffffff;
 
-    &:hover {
-      opacity: .87;
-    }
-
-    &:active {
-      opacity: .8;
-    }
-  }
 }

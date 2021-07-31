@@ -1,10 +1,19 @@
 import React, {useEffect, useRef, useState} from 'react';
-import './Keyboard.scss'
-import checkImg from '../../assets/images/check.svg'
 
-export const Keyboard: React.FC = () => {
+import checkImg from '../../../../assets/images/check.svg'
+import {Api} from '../../../../api/validate-api';
+
+import './Keyboard.scss'
+
+interface IKeyboardProps {
+    changeContent: (bool: boolean) => void
+}
+
+
+export const Keyboard: React.FC<IKeyboardProps> = ({changeContent}) => {
     const [phoneNumber, setPhoneNumber] = useState<string[]>(['7'])
     const [checkbox, setCheckbox] = useState(false)
+    const [isError, setIsError] = useState(false)
 
     const numRef = useRef<string[]>(phoneNumber)
     numRef.current = phoneNumber
@@ -21,15 +30,21 @@ export const Keyboard: React.FC = () => {
         if (numRef.current.length < 11 && (Number(key) || Number(key) === 0)) {
             setPhoneNumber(prevState => [...prevState, key])
         } else if (key === "Backspace" && numRef.current.length > 1) {
+            setIsError(false)
             setPhoneNumber(numRef.current.filter((item, index) => index + 1 !== numRef.current.length))
         } else if (key === 'Enter') {
             submit()
         }
     }
 
-    const submit = (): void => {
+    const submit = async () => {
         if (toggleSubmitButton()) {
-            console.log(Number(phoneNumber.join('')))
+            const valid = await Api.fetchValidate(Number(phoneNumber.join('')))
+            if (valid) {
+                changeContent(valid)
+            } else {
+                setIsError(true)
+            }
         }
     }
 
@@ -45,7 +60,7 @@ export const Keyboard: React.FC = () => {
             <div className='keyboard__header header'>
                 Введиде ваш номер мобильного телефона
             </div>
-            <div className='keyboard__tel-number tel-number'>
+            <div className={'keyboard__tel-number tel-number ' + (isError ? 'error' : '')}>
                 +{phoneNumber[0]}({phoneNumber[1] || "_"}{phoneNumber[2] || "_"}
                 {phoneNumber[3] || "_"}){phoneNumber[4] || "_"}{phoneNumber[5] || "_"}
                 {phoneNumber[6] || "_"}-{phoneNumber[7] || "_"}{phoneNumber[8] || "_"}
@@ -72,16 +87,20 @@ export const Keyboard: React.FC = () => {
                         </div>
                 )}
             </div>
-            <div className='keyboard__checkbox'>
-                <div
-                    className='checkbox__label'
-                    onClick={toggleCheckbox}>
-                    {checkbox && <img src={checkImg} alt=''/>}
-                </div>
-                <div className='checkbox__sub-text sub-text'>
-                    Согласие на обработку персональных данных
-                </div>
-            </div>
+            {isError
+                ? (<div className='keyboard__text error text'>
+                        <p>НЕВЕРНО ВВЕДЕН НОМЕР</p>
+                    </div>
+                ) : (<div className='keyboard__checkbox'>
+                    <div
+                        className='checkbox__label'
+                        onClick={toggleCheckbox}>
+                        {checkbox && <img src={checkImg} alt=''/>}
+                    </div>
+                    <div className='checkbox__sub-text sub-text'>
+                        Согласие на обработку персональных данных
+                    </div>
+                </div>)}
             <div
                 className={'keyboard__btn btn ' + (toggleSubmitButton() ? 'enabled' : 'disabled')}
                 onClick={submit}>
@@ -89,5 +108,5 @@ export const Keyboard: React.FC = () => {
             </div>
         </div>
     );
-};
+}
 

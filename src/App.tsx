@@ -1,11 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 
-import './App.scss';
-import {Banner} from "./components/Banner/Banner";
-import {Keyboard} from "./components/Keyboard/Keyboard";
+import {Banner} from "./pages/Banner/Banner";
 import {Promo} from "./pages/Promo/Promo";
 import video from './assets/videos/fonVideo.mp4'
 import poster from './assets/images/background.png'
+
+import './App.scss';
+
 
 export function App() {
     const [bannerClick, setBannerClick] = useState(false)
