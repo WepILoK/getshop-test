@@ -1,0 +1,77 @@
+@import "src/App";
+
+.keyboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+  padding: 40px 24px;
+  width: 380px;
+  height: 721px;
+  background-color: $mainColor1;
+
+  &__header {
+
+  }
+
+  &__tel-number {
+
+  }
+
+  &__sub-text {
+
+  }
+
+  .numpad {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    &__num {
+      width: 88px;
+    }
+
+    &__backspace {
+      width: 186px;
+    }
+
+    .btn {
+      height: 52px;
+      margin: 5px;
+      border: 1px solid #000000;
+      &:active {
+        background-color: $mainColor2;
+        color: #ffffff;
+      }
+    }
+  }
+  &__checkbox {
+    display: flex;
+    .checkbox {
+      &__label {
+        width: 40px;
+        height: 40px;
+        border: 2px solid $mainColor2;
+        cursor: pointer;
+        padding-top: 6px;
+      }
+      &__sub-text {
+        padding-left: 20px;
+        padding-top: 6px;
+        text-align: start;
+        width: 214px;
+        color: $sublimeColor;
+      }
+    }
+  }
+  &__btn {
+    width: 284px;
+    height: 52px;
+    border: 1px solid $disabled;
+    &:active {
+      background-color: $mainColor2;
+      color: #ffffff;
+    }
+  }
+}

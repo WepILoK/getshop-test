@@ -1,0 +1,64 @@
+@import "src/App";
+
+.banner {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  justify-content: flex-end;
+
+  .block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    padding: 20px 10px 10px;
+    background-color: $mainColor1;
+    width: 251px;
+    height: 357px;
+
+    &__title {
+      .title {
+        &__first {
+
+        }
+
+        &__second {
+
+        }
+      }
+    }
+
+    &__qr-code {
+      .qr-code {
+        &__image {
+          width: 126px;
+          height: 126px;
+        }
+
+        &__text {
+          padding-top: 20px;
+          width: 126px;
+          height: 32px;
+        }
+      }
+    }
+
+    &__btn {
+      background-color: $mainColor2;
+      color: $mainColor1;
+      min-width: 156px;
+      min-height: 52px;
+
+      &:hover {
+        opacity: .87;
+      }
+
+      &:active {
+        opacity: .8;
+      }
+
+    }
+  }
+
+}

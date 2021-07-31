@@ -1,0 +1,41 @@
+@import "src/App";
+
+.promo {
+  display: flex;
+  justify-content: space-between;
+
+  .right-side {
+    display: flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:flex-end;
+
+    .right-side {
+      &__close-btn {
+        margin: 20px;
+        width: 88px;
+        height: 52px;
+        background-color: #ffffff;
+        border: 2px solid $mainColor2;
+        &:active {
+          background-color: $mainColor2;
+          svg line{
+            stroke: #ffffff;
+          }
+        }
+
+      }
+      &__qr-code {
+        display: flex;
+        padding: 40px;
+      }
+      &__text {
+        padding: 5px 10px 0 0;
+        text-align: end;
+        width: 194px;
+        height: 76px;
+        color: #ffffff;
+      }
+    }
+  }
+}
