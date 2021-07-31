@@ -32,6 +32,11 @@
       width: 88px;
     }
 
+    .active {
+      background-color: $mainColor2;
+      color: #ffffff;
+    }
+
     &__backspace {
       width: 186px;
     }
@@ -40,14 +45,18 @@
       height: 52px;
       margin: 5px;
       border: 1px solid #000000;
+
       &:active {
         background-color: $mainColor2;
         color: #ffffff;
       }
+
     }
   }
+
   &__checkbox {
     display: flex;
+
     .checkbox {
       &__label {
         width: 40px;
@@ -56,6 +65,7 @@
         cursor: pointer;
         padding-top: 6px;
       }
+
       &__sub-text {
         padding-left: 20px;
         padding-top: 6px;
@@ -65,13 +75,27 @@
       }
     }
   }
+
   &__btn {
     width: 284px;
     height: 52px;
+  }
+
+  .disabled {
     border: 1px solid $disabled;
+    color: $disabled;
+  }
+
+  .enabled {
+    background-color: $mainColor2;
+    color: #ffffff;
+
+    &:hover {
+      opacity: .87;
+    }
+
     &:active {
-      background-color: $mainColor2;
-      color: #ffffff;
+      opacity: .8;
     }
   }
 }
